@@ -34,8 +34,6 @@ typedef CharacterFile = {
 	var no_antialiasing:Bool;
 	var healthbar_colors:Array<Int>;
 
-	public var canAutoAnim:Bool = true;
-
 	public var isModel:Bool = false;
 	public var beganLoading:Bool = false;
 	public var modelName:String;
