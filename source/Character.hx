@@ -96,6 +96,83 @@ class Character extends FlxSprite
 		{
 			//case 'your character name in case you want to hardcode them instead':
 
+			case 'steve':
+				modelName = "steve";
+				modelScale = 30;
+				modelSpeed = ["default" => 126 / 75];
+				isModel = true;
+				loadGraphicFromSprite(Main.modelView.sprite);
+				initYaw = -45;
+				initY = -28;
+				updateHitbox();
+				noLoopList = ["idle"];
+				Main.modelView.light.ambient = 1;
+				Main.modelView.light.specular = 0.0;
+				Main.modelView.light.diffuse = 0.0;
+
+			case 'doll':
+				modelName = "doll";
+				modelScale = 15;
+				modelSpeed = ["default" => 1.66, "idle" => 1];
+				isModel = true;
+				loadGraphicFromSprite(Main.modelView.sprite);
+				initYaw = -45;
+				updateHitbox();
+				noLoopList = ["singUP", 'singLEFT', 'singDOWN', 'singRIGHT'];
+				Main.modelView.light.ambient = 1;
+				Main.modelView.light.specular = 0;
+				Main.modelView.light.diffuse = 0;
+
+			case 'crash':
+				modelName = "crash";
+				modelScale = 15;
+				modelSpeed = ["default" => 2.6, "idle" => 1.8];
+				isModel = true;
+				loadGraphicFromSprite(Main.modelView.sprite);
+				initYaw = -45;
+				initZ = -25;
+				initY = -140;
+				updateHitbox();
+				noLoopList = ["idle", "singUP", 'singLEFT', 'singDOWN', 'singRIGHT'];
+				Main.modelView.light.ambient = 1;
+				Main.modelView.light.specular = 0;
+				Main.modelView.light.diffuse = 0;
+
+			case 'endo':
+				modelName = "Collection";
+				modelType = "md5";
+				modelScale = 25;
+				initYaw = -45;
+				initY = -115;
+				isModel = true;
+				loadGraphicFromSprite(Main.modelView.sprite);
+				updateHitbox();
+				noLoopList = ["singUP", 'singLEFT', 'singDOWN', 'singRIGHT'];
+				md5Anims["idle"] = "Collection_11";
+				md5Anims["singUP"] = "Collection_4";
+				md5Anims["singLEFT"] = "Collection_17";
+				md5Anims["singDOWN"] = "Collection_6";
+				md5Anims["singRIGHT"] = "Collection_14";
+				modelSpeed = ["default" => 1, "singRIGHT" => 1.7, "singLEFT" => 2, "singUP" => 1.5, "singDOWN" => 1.5];
+				Main.modelView.light.ambient = 0.5;
+				Main.modelView.light.specular = 1;
+				Main.modelView.light.diffuse = 1;
+			
+			case 'skeleton':
+				modelName = "skeleton";
+				modelType = "awd";
+				modelScale = 150;
+				initYaw = 90;
+				initY = 50;
+				isModel = true;
+				loadGraphicFromSprite(Main.modelView.sprite);
+				updateHitbox();
+				noLoopList = ["singUP", 'singLEFT', 'singDOWN', 'singRIGHT'];
+				modelSpeed = ["default" => 1];
+				Main.modelView.light.ambient = 0.5;
+				Main.modelView.light.specular = 1;
+				Main.modelView.light.diffuse = 1;
+
 			default:
 				var characterPath:String = 'characters/' + curCharacter + '.json';
 
