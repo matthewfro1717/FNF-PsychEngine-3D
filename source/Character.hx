@@ -33,6 +33,37 @@ typedef CharacterFile = {
 	var flip_x:Bool;
 	var no_antialiasing:Bool;
 	var healthbar_colors:Array<Int>;
+
+	public var canAutoAnim:Bool = true;
+
+	public var isModel:Bool = false;
+	public var beganLoading:Bool = false;
+	public var modelName:String;
+	public var modelScale:Float = 1;
+	public var modelSpeed:Map<String, Float> = new Map<String, Float>();
+	public var model:ModelThing;
+	public var noLoopList:Array<String> = [];
+	public var modelType:String = "md2";
+	public var md5Anims:Map<String, String> = new Map<String, String>();
+
+	public var spinYaw:Bool = false;
+	public var spinYawVal:Int = 0;
+	public var spinPitch:Bool = false;
+	public var spinPitchVal:Int = 0;
+	public var spinRoll:Bool = false;
+	public var spinRollVal:Int = 0;
+	public var yTween:FlxTween;
+	public var xTween:FlxTween;
+	public var originalY:Float = -1;
+	public var originalX:Float = -1;
+	public var circleTween:FlxTween;
+	public var initYaw:Float = 0;
+	public var initPitch:Float = 0;
+	public var initRoll:Float = 0;
+	public var initX:Float = 0;
+	public var initY:Float = 0;
+	public var initZ:Float = 0;
+
 }
 
 typedef AnimArray = {
